@@ -4,8 +4,13 @@
 
 <head><meta name="generator" content="Hexo 3.8.0">
     <meta charset="utf-8">
-    <meta name="keywords" content="Hello World, Vancen">
-    <meta name="description" content="Welcome to Hexo! This is your very first post. Check documentation for more info. If you get any problems when using Hex">
+    <meta name="keywords" content="MySQL 软件安装及数据库基础, Vancen">
+    <meta name="description" content="MySQL的安装与配置
+参考教程 http://www.runoob.com/mysql/mysql-install.html  
+
+注意事项：
+
+若使用浏览器下载安装包时速度过慢，可使用多线程下载工具（如 IDM），或者去国内开源镜像站下">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
     <meta name="renderer" content="webkit|ie-stand|ie-comp">
@@ -13,7 +18,7 @@
     <meta name="format-detection" content="telephone=no">
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
-    <title>Hello World | Vancen</title>
+    <title>MySQL 软件安装及数据库基础 | Vancen</title>
     <link rel="icon" type="image/png" href="/favicon.png">
 
     <link rel="stylesheet" type="text/css" href="/libs/awesome/css/font-awesome.min.css">
@@ -257,13 +262,13 @@
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/12.jpg')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/14.jpg')">
     <div class="container">
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
                     <div class="description center-align post-title">
-                        Hello World
+                        MySQL 软件安装及数据库基础
                     </div>
                 </div>
             </div>
@@ -372,12 +377,25 @@
             <div class="row tag-cate">
                 <div class="col s7">
                     
-                          <div class="article-tag">
-                            <span class="chip bg-color">无标签</span>
-                          </div>
+                    <div class="article-tag">
+                        
+                            <a href="/tags/MySQL/" target="_blank">
+                                <span class="chip bg-color">MySQL</span>
+                            </a>
+                        
+                    </div>
                     
                 </div>
                 <div class="col s5 right-align">
+                    
+                    <div class="post-cate">
+                        <i class="fa fa-bookmark fa-fw icon-category"></i>
+                        
+                            <a href="/categories/MySQL/" class="post-category" target="_blank">
+                                MySQL
+                            </a>
+                        
+                    </div>
                     
                 </div>
             </div>
@@ -385,21 +403,21 @@
             <div class="post-info">
                 <div class="post-date info-break-policy">
                     <i class="fa fa-calendar-minus-o fa-fw"></i>发布日期:&nbsp;&nbsp;
-                    2019-03-29
+                    2019-03-31
                 </div>
 
                 
                     
                     <div class="info-break-policy">
                         <i class="fa fa-file-word-o fa-fw"></i>文章字数:&nbsp;&nbsp;
-                        73
+                        637
                     </div>
                     
 
                     
                     <div class="info-break-policy">
                         <i class="fa fa-clock-o fa-fw"></i>阅读时长:&nbsp;&nbsp;
-                        1 分
+                        2 分
                     </div>
                     
                 
@@ -415,19 +433,43 @@
         <hr class="clearfix">
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <p>Welcome to <a href="https://hexo.io/" target="_blank" rel="noopener">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/" target="_blank" rel="noopener">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html" target="_blank" rel="noopener">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues" target="_blank" rel="noopener">GitHub</a>.</p>
-<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><pre class=" language-bash"><code class="language-bash">$ hexo new <span class="token string">"My New Post"</span>
-</code></pre>
-<p>More info: <a href="https://hexo.io/docs/writing.html" target="_blank" rel="noopener">Writing</a></p>
-<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><pre class=" language-bash"><code class="language-bash">$ hexo server
-</code></pre>
-<p>More info: <a href="https://hexo.io/docs/server.html" target="_blank" rel="noopener">Server</a></p>
-<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><pre class=" language-bash"><code class="language-bash">$ hexo generate
-</code></pre>
-<p>More info: <a href="https://hexo.io/docs/generating.html" target="_blank" rel="noopener">Generating</a></p>
-<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><pre class=" language-bash"><code class="language-bash">$ hexo deploy
-</code></pre>
-<p>More info: <a href="https://hexo.io/docs/deployment.html" target="_blank" rel="noopener">Deployment</a></p>
+                <h2 id="MySQL的安装与配置"><a href="#MySQL的安装与配置" class="headerlink" title="MySQL的安装与配置"></a>MySQL的安装与配置</h2><blockquote>
+<p>参考教程 <a href="http://www.runoob.com/mysql/mysql-install.html" target="_blank" rel="noopener">http://www.runoob.com/mysql/mysql-install.html</a>  </p>
+</blockquote>
+<p><strong>注意事项：</strong></p>
+<ol>
+<li>若使用浏览器下载安装包时速度过慢，可使用多线程下载工具（如 IDM），或者去国内开源镜像站下载（如网易开源镜像站）</li>
+<li>使用记事本创建 my.ini 配置文件（创建完之后把后缀名改为.ini）；设置mysql的安装目录时，basedir=解压后的文件夹目录，并使用双反斜杠(如 basedir=C:\\web\\mysql-8.0.11)</li>
+<li><p>启动 MySQL 数据库时必须以管理员身份打开 cmd 或者Windows PowerShell</p>
+</li>
+<li><p>初始化数据库之后得到的初始密码记得复制保存</p>
+</li>
+</ol>
+<p>安装成功效果如图：</p>
+<p><img src="https://raw.githubusercontent.com/vancenx/mdpic/master/20190331185909.png" alt></p>
+<p>登录成功效果如图：</p>
+<p><img src="https://raw.githubusercontent.com/vancenx/mdpic/master/20190331190031.png" alt></p>
+<h2 id="数据库基础知识"><a href="#数据库基础知识" class="headerlink" title="数据库基础知识"></a>数据库基础知识</h2><ul>
+<li><strong>数据库</strong>（Database）是按照数据结构来组织、存储和管理数据的仓库。</li>
+<li><p><strong>关系型数据库</strong>，是建立在关系模型基础上的数据库，借助于集合代数等数学概念和方法来处理数据库中的数据。特点如下：</p>
+<ol>
+<li>数据以表格的形式出现</li>
+<li>每行为各种记录名称</li>
+<li>每列为记录名称所对应的数据域</li>
+<li>许多的行和列组成一张表单</li>
+<li>若干的表单组成database</li>
+</ol>
+</li>
+<li><p><strong>数据表:</strong> 表是数据的矩阵。在一个数据库中的表看起来像一个简单的电子表格。</p>
+</li>
+<li><strong>列:</strong> 一列(数据元素) 包含了相同的数据, 例如邮政编码的数据。</li>
+<li><strong>行：</strong>一行（=元组，或记录）是一组相关的数据，例如一条用户订阅的数据。</li>
+<li><strong>冗余</strong>：存储两倍数据，冗余降低了性能，但提高了数据的安全性。</li>
+<li><strong>主键</strong>：主键是唯一的。一个数据表中只能包含一个主键。你可以使用主键来查询数据。</li>
+<li><strong>外键：</strong>外键用于关联两个表。</li>
+<li><strong>视图</strong>：数据库中的视图是一个虚拟表，但它同真实表一样，包含一系列带有名称的行和列数据。行和列数据来自由定义视图查询所引用的表，并且在应用视图时动态生成。</li>
+<li><strong>存储过程</strong>：是一种在数据库中存储复杂程序，以便外部程序调用的一种数据库对象。存储过程是为了完成特定功能的SQL语句集，经编译创建并保存在数据库中，用户可通过指定存储过程的名字并给定参数(需要时)来调用执行。</li>
+</ul>
 
             </div>
             <hr>
@@ -575,7 +617,7 @@
                     </span>
                     <a href="https://vancenx.github.io" class="b-link-green">Vancen</a>
                     <i class="fa fa-angle-right fa-lg fa-fw text-color"></i>
-                    <a href="/2019/03/29/hello-world/" class="b-link-green">Hello World</a>
+                    <a href="/2019/03/31/mysql-ruan-jian-an-zhuang-ji-shu-ju-ku-ji-chu/" class="b-link-green">MySQL 软件安装及数据库基础</a>
                 </p>
             </div>
         </div>
@@ -598,7 +640,8 @@
         
         <div class="article col s12 m6 overflow-policy" data-aos="fade-up">
             <div class="article-badge left-badge text-color">
-                <i class="fa fa-chevron-left"></i>&nbsp;上一篇</div>
+                <i class="fa fa-dot-circle-o"></i>&nbsp;本篇
+            </div>
             <div class="card">
                 <a href="/2019/03/31/mysql-ruan-jian-an-zhuang-ji-shu-ju-ku-ji-chu/">
                     <div class="card-image">
@@ -617,9 +660,9 @@
 
 若使用浏览器下载安装包时速度过慢，可使用多线程下载工具（如 IDM），或者去国内开源镜像站下</div>
                     <div class="publish-info">
-                        <span class="publish-date">
-                            <i class="fa fa-clock-o fa-fw icon-date"></i>2019-03-31
-                        </span>
+                            <span class="publish-date">
+                                <i class="fa fa-clock-o fa-fw icon-date"></i>2019-03-31
+                            </span>
                         <span class="publish-author">
                             
                             <i class="fa fa-bookmark fa-fw icon-category"></i>
@@ -632,6 +675,7 @@
                         </span>
                     </div>
                 </div>
+
                 
                 <div class="card-action article-tags">
                     
@@ -647,7 +691,7 @@
         
         <div class="article col s12 m6 overflow-policy" data-aos="fade-up">
             <div class="article-badge right-badge text-color">
-                本篇&nbsp;<i class="fa fa-dot-circle-o"></i>
+                下一篇&nbsp;<i class="fa fa-chevron-right"></i>
             </div>
             <div class="card">
                 <a href="/2019/03/29/hello-world/">
@@ -673,7 +717,6 @@
                         </span>
                     </div>
                 </div>
-
                 
             </div>
         </div>
