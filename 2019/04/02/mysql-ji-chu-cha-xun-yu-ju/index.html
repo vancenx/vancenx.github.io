@@ -378,7 +378,7 @@
                     <div class="article-tag">
                         
                             <a href="/tags/MySQL/" target="_blank">
-                                <span class="chip bg-color">-MySQL</span>
+                                <span class="chip bg-color">MySQL</span>
                             </a>
                         
                     </div>
@@ -390,7 +390,7 @@
                         <i class="fa fa-bookmark fa-fw icon-category"></i>
                         
                             <a href="/categories/MySQL/" class="post-category" target="_blank">
-                                -MySQL
+                                MySQL
                             </a>
                         
                     </div>
@@ -408,7 +408,7 @@
                     
                     <div class="info-break-policy">
                         <i class="fa fa-file-word-o fa-fw"></i>文章字数:&nbsp;&nbsp;
-                        1.1k
+                        942
                     </div>
                     
 
@@ -449,8 +449,10 @@
 <h2 id="4-筛选语句-WHERE"><a href="#4-筛选语句-WHERE" class="headerlink" title="4.筛选语句 WHERE"></a>4.筛选语句 WHERE</h2><ul>
 <li><p>语句解释：WHERE子句允许根据指定的过滤表达式或条件来指定要选择的行。</p>
 </li>
-<li><p>运算符：</p>
-<p>| 操作符 | 描述                                                         | 实例                 |<br>| :—– | :———————————————————– | :——————- |<br>| =      | 等号，检测两个值是否相等，如果相等返回true                   | (A = B) 返回false。  |<br>| &lt;&gt;, != | 不等于，检测两个值是否相等，如果不相等返回true               | (A != B) 返回 true。 |<br>| &gt;      | 大于号，检测左边的值是否大于右边的值, 如果左边的值大于右边的值返回true | (A &gt; B) 返回false。  |<br>| &lt;      | 小于号，检测左边的值是否小于右边的值, 如果左边的值小于右边的值返回true | (A &lt; B) 返回 true。  |<br>| &gt;=     | 大于等于号，检测左边的值是否大于或等于右边的值, 如果左边的值大于或等于右边的值返回true | (A &gt;= B) 返回false。 |<br>| &lt;=     | 小于等于号，检测左边的值是否小于于或等于右边的值, 如果左边的值小于或等于右边的值返回true | (A &lt;= B) 返回 true。 |</p>
+<li><p>运算符：<br>算术运算符<br>比较运算符<br>逻辑运算符<br>位运算符</p>
+<blockquote>
+<p>参考：<a href="http://www.runoob.com/mysql/mysql-operator.html" target="_blank" rel="noopener">http://www.runoob.com/mysql/mysql-operator.html</a></p>
+</blockquote>
 </li>
 </ul>
 <h2 id="5-分组语句-GROUP-BY"><a href="#5-分组语句-GROUP-BY" class="headerlink" title="5.分组语句 GROUP BY"></a>5.分组语句 GROUP BY</h2><ul>
@@ -462,19 +464,23 @@
 <li>语句解释: SELECT prod_name FROM Products ORDER BY prod_name（对prod_name列以字母顺序排序数据）</li>
 <li>正序、逆序：DESC降序，默认升序（ASC）</li>
 </ul>
-<h2 id="7-函数"><a href="#7-函数" class="headerlink" title="7.函数"></a>7.函数</h2><blockquote>
+<h2 id="7-函数"><a href="#7-函数" class="headerlink" title="7.函数"></a>7.函数</h2><ul>
+<li>日期函数</li>
+<li>数字函数</li>
+<li>字符串函数<blockquote>
 <p>参考：<a href="http://www.runoob.com/mysql/mysql-functions.html" target="_blank" rel="noopener">http://www.runoob.com/mysql/mysql-functions.html</a></p>
 </blockquote>
+</li>
+</ul>
 <h2 id="8-SQL注释"><a href="#8-SQL注释" class="headerlink" title="8.SQL注释"></a>8.SQL注释</h2><ul>
 <li>SQL语句中的单行注释使用 –</li>
 <li>SQL语句中的多行注释采用 /<em>…</em>/</li>
 </ul>
 <h2 id="9-SQL代码规范"><a href="#9-SQL代码规范" class="headerlink" title="9.SQL代码规范"></a>9.SQL代码规范</h2><ul>
-<li><p>[SQL编程格式的优化建议] <a href="https://zhuanlan.zhihu.com/p/27466166" target="_blank" rel="noopener">https://zhuanlan.zhihu.com/p/27466166</a></p>
-</li>
-<li><p>[SQL Style Guide] <a href="https://www.sqlstyle.guide/" target="_blank" rel="noopener">https://www.sqlstyle.guide/</a></p>
-</li>
+<li>[SQL编程格式的优化建议] <a href="https://zhuanlan.zhihu.com/p/27466166" target="_blank" rel="noopener">https://zhuanlan.zhihu.com/p/27466166</a></li>
+<li>[SQL Style Guide] <a href="https://www.sqlstyle.guide/" target="_blank" rel="noopener">https://www.sqlstyle.guide/</a></li>
 </ul>
+<p>可以使用 Navicat 管理数据库，打开「新建查询」编写 MySQL 语句，有语法提示、高亮、一键美化等友好功能。</p>
 <h2 id="项目一：查找重复的电子邮箱（难度：简单）"><a href="#项目一：查找重复的电子邮箱（难度：简单）" class="headerlink" title="项目一：查找重复的电子邮箱（难度：简单）"></a>项目一：查找重复的电子邮箱（难度：简单）</h2><p>创建 email表，并插入如下三行数据<br>+—-+———+<br>| Id | c   |<br>+—-+———+<br>| 1  | <a href="mailto:a@b.com" target="_blank" rel="noopener">a@b.com</a> |<br>| 2  | <a href="mailto:c@d.com" target="_blank" rel="noopener">c@d.com</a> |<br>| 3  | <a href="mailto:a@b.com" target="_blank" rel="noopener">a@b.com</a> |<br>+—-+———+</p>
 <p>编写一个 SQL 查询，查找 Email 表中所有重复的电子邮箱。<br>根据以上输入，你的查询应返回以下结果：<br>+———+<br>| Email   |<br>+———+<br>| <a href="mailto:a@b.com" target="_blank" rel="noopener">a@b.com</a> |<br>+———+<br>说明：所有电子邮箱都是小写字母。</p>
 <h3 id="解决方法："><a href="#解决方法：" class="headerlink" title="解决方法："></a>解决方法：</h3><ol>
@@ -498,8 +504,10 @@ INSERT INTO email VALUES('3','a@b.com');
 <pre class=" language-mysql"><code class="language-mysql">SELECT Email 
 FROM email 
 GROUP BY Email 
-HAVING COUNT(Email)>1
+HAVING COUNT(Email)>1；
 </code></pre>
+<p>运行结果：</p>
+<p><img src="https://raw.githubusercontent.com/vancenx/mdpic/master/20190404204857.png" alt></p>
 <h2 id="项目二：查找大国（难度：简单）"><a href="#项目二：查找大国（难度：简单）" class="headerlink" title="项目二：查找大国（难度：简单）"></a>项目二：查找大国（难度：简单）</h2><p>创建如下 World 表<br>+—————–+————+————+————–+—————+<br>| name            | continent  | area       | population   | gdp           |<br>+—————–+————+————+————–+—————+<br>| Afghanistan     | Asia       | 652230     | 25500100     | 20343000      |<br>| Albania         | Europe     | 28748      | 2831741      | 12960000      |<br>| Algeria         | Africa     | 2381741    | 37100000     | 188681000     |<br>| Andorra         | Europe     | 468        | 78115        | 3712000       |<br>| Angola          | Africa     | 1246700    | 20609294     | 100990000     |<br>+—————–+————+————+————–+—————+<br>如果一个国家的面积超过300万平方公里，或者(人口超过2500万并且gdp超过2000万)，那么这<br>编写一个SQL查询，输出表中所有大国家的名称、人口和面积。<br>例如，根据上表，我们应该输出:<br>+————–+————-+————–+<br>| name         | population  | area         |<br>+————–+————-+————–+<br>| Afghanistan  | 25500100    | 652230       |<br>| Algeria      | 37100000    | 2381741      |<br>+————–+————-+————–+</p>
 <ol>
 <li>创建表</li>
@@ -527,17 +535,15 @@ INSERT INTO World
   VALUES('Angola','Africa',1246700,20609294,100990000);
 </code></pre>
 <ol start="3">
-<li>查询语句<pre class=" language-mysql"><code class="language-mysql">SELECT
- name,
- population,
- area
-FROM
- World
-WHERE
- area > 3000000 or population > 25000000
+<li>查询语句<pre class=" language-mysql"><code class="language-mysql">SELECT name, population, area
+FROM World
+WHERE area > 3000000
+ OR population > 25000000
 </code></pre>
 </li>
 </ol>
+<p>运行结果：</p>
+<p><img src="https://raw.githubusercontent.com/vancenx/mdpic/master/20190404205034.png" alt></p>
 
             </div>
             <hr>
@@ -734,7 +740,7 @@ WHERE
                             <i class="fa fa-bookmark fa-fw icon-category"></i>
                             
                             <a href="/categories/MySQL/" class="post-category" target="_blank">
-                                    -MySQL
+                                    MySQL
                                 </a>
                             
                             
@@ -746,7 +752,7 @@ WHERE
                 <div class="card-action article-tags">
                     
                     <a href="/tags/MySQL/" target="_blank">
-                        <span class="chip bg-color">-MySQL</span>
+                        <span class="chip bg-color">MySQL</span>
                     </a>
                     
                 </div>
@@ -915,7 +921,7 @@ WHERE
 
             
                 &nbsp;<i class="fa fa-area-chart"></i>&nbsp;站点总字数:&nbsp;
-                <span class="white-color">1.8k</span>
+                <span class="white-color">1.7k</span>
             
 
             
