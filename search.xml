@@ -11,6 +11,18 @@
         <content type="html"><![CDATA[]]></content>
       
       
+      <categories>
+          
+          <category> MySQL </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> MySQL </tag>
+            
+        </tags>
       
     </entry>
     
@@ -24,6 +36,18 @@
         <content type="html"><![CDATA[<h2 id="1-MySQL表数据类型"><a href="#1-MySQL表数据类型" class="headerlink" title="1.MySQL表数据类型"></a>1.MySQL表数据类型</h2><p>MySQL中定义数据字段的类型对你数据库的优化是非常重要的。</p><p>MySQL支持多种类型，大致可以分为三类：数值、日期/时间和字符串(字符)类型。</p><blockquote><p>参考：<a href="http://www.runoob.com/mysql/mysql-data-types.html" target="_blank" rel="noopener">http://www.runoob.com/mysql/mysql-data-types.html</a></p></blockquote><h2 id="2-用SQL语句创建表"><a href="#2-用SQL语句创建表" class="headerlink" title="2.用SQL语句创建表"></a>2.用SQL语句创建表</h2><p>创建MySQL数据表需要以下信息：</p><ul><li>表名</li><li>表字段名</li><li>定义每个表字段</li></ul><p>以下为创建MySQL数据表的SQL通用语法：</p><pre class=" language-mysql"><code class="language-mysql">CREATE TABLE table_name (column_name column_type);</code></pre><p>约束条件：</p><ul><li>NOT NULL(非空)</li><li>AUTO_INCREMENT(自增长)</li><li>DEFAULT(默认值)</li><li>UNIQUE(唯一)</li><li>PRIMARY KEY(主键)</li><li>FOREIGN KEY(外键)</li></ul><blockquote><p>参考：<a href="https://www.jianshu.com/p/4d09d98e87da" target="_blank" rel="noopener">https://www.jianshu.com/p/4d09d98e87da</a></p></blockquote><h2 id="3-用SQL语句向表中添加数据"><a href="#3-用SQL语句向表中添加数据" class="headerlink" title="3.用SQL语句向表中添加数据"></a>3.用SQL语句向表中添加数据</h2><p>以下为向MySQL数据表插入数据通用的 <strong>INSERT INTO</strong> SQL语法：</p><pre class=" language-mysql"><code class="language-mysql">INSERT INTO table_name ( field1, field2,...fieldN )                       VALUES                       ( value1, value2,...valueN );</code></pre><p>如果数据是字符型，必须使用单引号或者双引号，如：”value”。</p><p>如果所有的列都要添加数据可以不规定列进行添加数据：</p><pre class=" language-mysql"><code class="language-mysql">INSERT INTO table_name                       VALUES                       ( value1, value2,...valueN );</code></pre><h2 id="4-用SQL语句删除数据"><a href="#4-用SQL语句删除数据" class="headerlink" title="4.用SQL语句删除数据"></a>4.用SQL语句删除数据</h2><h3 id="DELETE"><a href="#DELETE" class="headerlink" title="DELETE"></a>DELETE</h3><p>删除记录</p><pre class=" language-mysql"><code class="language-mysql">DELETE FROM table_name [WHERE Clause]</code></pre><ul><li>如果没有指定 WHERE 子句，MySQL 表中的所有记录将被删除。</li><li>你可以在 WHERE 子句中指定任何条件</li><li>您可以在单个表中一次性删除记录。</li></ul><h3 id="DROP"><a href="#DROP" class="headerlink" title="DROP"></a>DROP</h3><p>删除表</p><pre class=" language-mysql"><code class="language-mysql">DROP TABLE table_name ;</code></pre><h3 id="TRUNCATE"><a href="#TRUNCATE" class="headerlink" title="TRUNCATE"></a>TRUNCATE</h3><p>删除表数据</p><pre class=" language-mysql"><code class="language-mysql">TRUNCATE TABLE table_name ;</code></pre><h3 id="区别"><a href="#区别" class="headerlink" title="区别"></a>区别</h3><ul><li>delete 和 truncate 仅仅删除表数据，drop 连表数据和表结构一起删除，打个比方，delete 是单杀，truncate 是团灭，drop 是把电脑摔了。</li><li>delete 是 DML 语句，操作完以后如果没有不想提交事务还可以回滚，truncate 和 drop 是 DDL 语句，操作完马上生效，不能回滚，打个比方，delete 是发微信说分手，后悔还可以撤回，truncate 和 drop 是直接扇耳光说滚，不能反悔。</li><li>执行的速度上，<strong>drop&gt;truncate&gt;delete</strong>，打个比方，drop 是神舟火箭，truncate 是和谐号动车，delete 是自行车。</li></ul><h2 id="5-用SQL语句修改表"><a href="#5-用SQL语句修改表" class="headerlink" title="5.用SQL语句修改表"></a>5.用SQL语句修改表</h2><h3 id="UPDATE"><a href="#UPDATE" class="headerlink" title="UPDATE"></a>UPDATE</h3><p>修改或更新 MySQL 中的数据</p><pre class=" language-mysql"><code class="language-mysql">UPDATE table_name SET field1=new-value1, field2=new-value2[WHERE Clause]</code></pre><ul><li>你可以同时更新一个或多个字段。</li><li>你可以在 WHERE 子句中指定任何条件。</li><li>你可以在一个单独表中同时更新数据。</li></ul><h3 id="ALTER"><a href="#ALTER" class="headerlink" title="ALTER"></a>ALTER</h3><ul><li><p>删除列</p><pre class=" language-mysql"><code class="language-mysql">ALTER table_name DROP 【列名称】</code></pre></li><li>增加列<pre class=" language-mysql"><code class="language-mysql">ALTER table_name ADD 【列名称】 INT NOT NULL  COMMENT '注释说明'</code></pre></li><li>重命名列<pre class=" language-mysql"><code class="language-mysql">ALTER table_name CHANGE 【列名称】【新列名称】 BIGINT NOT NULL  COMMENT '注释说明'</code></pre></li></ul><h2 id="项目三：超过5名学生的课（难度：简单）"><a href="#项目三：超过5名学生的课（难度：简单）" class="headerlink" title="项目三：超过5名学生的课（难度：简单）"></a>项目三：超过5名学生的课（难度：简单）</h2><p>创建如下所示的courses 表 ，有: student (学生) 和 class (课程)。</p><p>例如,表:</p><p>+———+————+</p><p>| student | class      |</p><p>+———+————+‘’</p><p>| A       | Math       |</p><p>| B      | English    |</p><p>| C       | Math       |</p><p>| D       | Biology    |</p><p>| E       | Math       |</p><p>| F       | Computer   |</p><p>| G       | Math       |</p><p>| H       | Math       |</p><p>| I       | Math       |</p><p>| A      | Math       |</p><p>+———+————+</p><p>编写一个 SQL 查询，列出所有超过或等于5名学生的课。</p><p>应该输出:</p><p>+———+</p><p>| class   |</p><p>+———+</p><p>| Math    |</p><p>+———+</p><p>Note:</p><p>学生在每个课中不应被重复计算。</p><ol><li>创建表<pre class=" language-mysql"><code class="language-mysql">CREATE TABLE courses( student char(1) NOT NULL,  class varchar(20) NOT NULL);</code></pre></li><li>插入数据<pre class=" language-mysql"><code class="language-mysql">INSERT INTO coursesVALUES ( 'A', 'Math' ), ( 'B', 'English' ), ( 'C', 'Math' ), ( 'D', 'Biology' ), ( 'E', 'Math' ), ( 'F', 'Computer' ), ( 'G', 'Math' ), ( 'H', 'Math' ), ( 'I', 'Math' ), ( 'A', 'Math' );</code></pre></li><li>查询语句<pre class=" language-mysql"><code class="language-mysql">SELECT classFROM coursesGROUP BY class HAVING count(DISTINCT student) >= 5;</code></pre>运行结果：</li></ol><p><img src="https://raw.githubusercontent.com/vancenx/mdpic/master/20190404233907.png" alt></p><h2 id="项目四：交换工资（难度：简单）"><a href="#项目四：交换工资（难度：简单）" class="headerlink" title="项目四：交换工资（难度：简单）"></a>项目四：交换工资（难度：简单）</h2><p>项目四：交换工资（难度：简单）</p><p>创建一个 salary表，如下所示，有m=男性 和 f=女性的值 。</p><p>例如:</p><p>| id | name | sex | salary |</p><p>|—-|——|—–|——–|</p><p>| 1  | A    | m   | 2500   |</p><p>| 2  | B    | f   | 1500   |</p><p>| 3  | C    | m   | 5500   |</p><p>| 4  | D    | f   | 500    |</p><p>交换所有的 f 和 m 值(例如，将所有 f 值更改为 m，反之亦然)。要求使用一个更新查询，并且没有中间临时表。</p><p>运行你所编写的查询语句之后，将会得到以下表:</p><p>| id | name | sex | salary |</p><p>|—-|——|—–|——–|</p><p>| 1  | A    | f  | 2500   |</p><p>| 2  | B    | m   | 1500   |</p><p>| 3  | C    | f   | 5500   |</p><p>| 4  | D    | m   | 500    |</p><ol><li>创建表<pre class=" language-mysql"><code class="language-mysql">CREATE TABLE salary(  id int NOT NULL auto_increment,  name char(1) NOT NULL,  sex char(1) NOT NULL,  salary int NOT NULL,  PRIMARY key(id));</code></pre></li><li>插入数据<pre class=" language-mysql"><code class="language-mysql">INSERT INTO salary ( NAME, sex, salary )VALUES ( 'A', 'm', 2500 ), ( 'B', 'f', 1500 ), ( 'C', 'm', 5500 ), ( 'D', 'f', 500 );</code></pre></li><li>查询语句<pre class=" language-mysql"><code class="language-mysql">UPDATE salarySET sex = CASE  WHEN sex = 'f' THEN 'm' ELSE 'f'END;</code></pre>运行结果：<br><img src="https://raw.githubusercontent.com/vancenx/mdpic/master/20190404234629.png" alt></li></ol>]]></content>
       
       
+      <categories>
+          
+          <category> MySQL </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> MySQL </tag>
+            
+        </tags>
       
     </entry>
     
