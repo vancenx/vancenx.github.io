@@ -4,11 +4,10 @@
 
 <head><meta name="generator" content="Hexo 3.8.0">
     <meta charset="utf-8">
-    <meta name="keywords" content="MySQL 基础-查询语句, Vancen">
-    <meta name="description" content="1.导入数据库
-参考教程：https://www.yiibai.com/mysql/how-to-load-sample-database-into-mysql-database-server.html  
-
-2.SQL是什么？MySQL是">
+    <meta name="keywords" content="MySQL 数据导入导出, Vancen">
+    <meta name="description" content="数据导入导出将MySQL表导出到CSV文件SELECT * from world 
+INTO OUTFILE &#39;E:/mysql-8.0.15-winx64/world.csv&#39;
+FIELDS TERMINATED BY &#39;,&#39; ENCLO">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
     <meta name="renderer" content="webkit|ie-stand|ie-comp">
@@ -16,7 +15,7 @@
     <meta name="format-detection" content="telephone=no">
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
-    <title>MySQL 基础-查询语句 | Vancen</title>
+    <title>MySQL 数据导入导出 | Vancen</title>
     <link rel="icon" type="image/png" href="/favicon.png">
 
     <link rel="stylesheet" type="text/css" href="/libs/awesome/css/font-awesome.min.css">
@@ -260,13 +259,13 @@
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/14.jpg')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/5.jpg')">
     <div class="container">
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
                     <div class="description center-align post-title">
-                        MySQL 基础-查询语句
+                        MySQL 数据导入导出
                     </div>
                 </div>
             </div>
@@ -401,21 +400,21 @@
             <div class="post-info">
                 <div class="post-date info-break-policy">
                     <i class="fa fa-calendar-minus-o fa-fw"></i>发布日期:&nbsp;&nbsp;
-                    2019-04-02
+                    2019-04-06
                 </div>
 
                 
                     
                     <div class="info-break-policy">
                         <i class="fa fa-file-word-o fa-fw"></i>文章字数:&nbsp;&nbsp;
-                        942
+                        758
                     </div>
                     
 
                     
                     <div class="info-break-policy">
                         <i class="fa fa-clock-o fa-fw"></i>阅读时长:&nbsp;&nbsp;
-                        4 分
+                        3 分
                     </div>
                     
                 
@@ -431,87 +430,50 @@
         <hr class="clearfix">
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <h2 id="1-导入数据库"><a href="#1-导入数据库" class="headerlink" title="1.导入数据库"></a>1.导入数据库</h2><blockquote>
-<p>参考教程：<a href="https://www.yiibai.com/mysql/how-to-load-sample-database-into-mysql-database-server.html" target="_blank" rel="noopener">https://www.yiibai.com/mysql/how-to-load-sample-database-into-mysql-database-server.html</a>  </p>
-</blockquote>
-<h2 id="2-SQL是什么？MySQL是什么？"><a href="#2-SQL是什么？MySQL是什么？" class="headerlink" title="2.SQL是什么？MySQL是什么？"></a>2.SQL是什么？MySQL是什么？</h2><ul>
-<li><p>SQL代表结构化查询语言(<strong>Structured Query Language</strong>)。SQL是用于访问数据库的标准化语言。</p>
-</li>
-<li><p>MySQL是一个数据库管理系统，也是一个关系数据库。</p>
-</li>
-</ul>
-<h2 id="3-查询语句-SELECT-FROM"><a href="#3-查询语句-SELECT-FROM" class="headerlink" title="3.查询语句 SELECT FROM"></a>3.查询语句 SELECT FROM</h2><ul>
-<li>语句解释：SELECT 语句用于从表中选取数据。结果被存储在一个结果表中（称为结果集）。</li>
-<li>去重语句：关键词 DISTINCT 用于返回唯一不同的值。语法为： SELECT DISTINCT 列名称 FROM 表名称</li>
-<li>前N个语句：使用 LIMIT 属性来设定返回的记录数。</li>
-<li>CASE…END判断语句：检查表达式的值与一组唯一值的匹配。</li>
-</ul>
-<h2 id="4-筛选语句-WHERE"><a href="#4-筛选语句-WHERE" class="headerlink" title="4.筛选语句 WHERE"></a>4.筛选语句 WHERE</h2><ul>
-<li><p>语句解释：WHERE子句允许根据指定的过滤表达式或条件来指定要选择的行。</p>
-</li>
-<li><p>运算符：<br>算术运算符<br>比较运算符<br>逻辑运算符<br>位运算符</p>
-<blockquote>
-<p>参考：<a href="http://www.runoob.com/mysql/mysql-operator.html" target="_blank" rel="noopener">http://www.runoob.com/mysql/mysql-operator.html</a></p>
-</blockquote>
-</li>
-</ul>
-<h2 id="5-分组语句-GROUP-BY"><a href="#5-分组语句-GROUP-BY" class="headerlink" title="5.分组语句 GROUP BY"></a>5.分组语句 GROUP BY</h2><ul>
-<li>聚集函数:count() 计数，sum() 求和，avg() 平均数，max() 最大值，min() 最小值等</li>
-<li>语句解释：GROUP表示分组，BY后面写字段名，就表示根据哪个字段进行分组，GROUP BY必须得配合聚合函数来用，分组之后你可以计数（COUNT），求和（SUM），求平均数（AVG）等。</li>
-<li>HAVING子句：提到GROUP BY 我们就不得不提到HAVING，HAVING相当于条件筛选，但它与WHERE筛选不同，HAVING是对于GROUP BY对象进行筛选。</li>
-</ul>
-<h2 id="6-排序语句-ORDER-BY"><a href="#6-排序语句-ORDER-BY" class="headerlink" title="6.排序语句 ORDER BY"></a>6.排序语句 ORDER BY</h2><ul>
-<li>语句解释: SELECT prod_name FROM Products ORDER BY prod_name（对prod_name列以字母顺序排序数据）</li>
-<li>正序、逆序：DESC降序，默认升序（ASC）</li>
-</ul>
-<h2 id="7-函数"><a href="#7-函数" class="headerlink" title="7.函数"></a>7.函数</h2><ul>
-<li>日期函数</li>
-<li>数字函数</li>
-<li>字符串函数<blockquote>
-<p>参考：<a href="http://www.runoob.com/mysql/mysql-functions.html" target="_blank" rel="noopener">http://www.runoob.com/mysql/mysql-functions.html</a></p>
-</blockquote>
-</li>
-</ul>
-<h2 id="8-SQL注释"><a href="#8-SQL注释" class="headerlink" title="8.SQL注释"></a>8.SQL注释</h2><ul>
-<li>SQL语句中的单行注释使用 --</li>
-<li>SQL语句中的多行注释采用 /*…*/</li>
-</ul>
-<h2 id="9-SQL代码规范"><a href="#9-SQL代码规范" class="headerlink" title="9.SQL代码规范"></a>9.SQL代码规范</h2><ul>
-<li>[SQL编程格式的优化建议] <a href="https://zhuanlan.zhihu.com/p/27466166" target="_blank" rel="noopener">https://zhuanlan.zhihu.com/p/27466166</a></li>
-<li>[SQL Style Guide] <a href="https://www.sqlstyle.guide/" target="_blank" rel="noopener">https://www.sqlstyle.guide/</a></li>
-</ul>
-<p>可以使用 Navicat 管理数据库，打开「新建查询」编写 MySQL 语句，有语法提示、高亮、一键美化等友好功能。</p>
-<h2 id="项目一：查找重复的电子邮箱（难度：简单）"><a href="#项目一：查找重复的电子邮箱（难度：简单）" class="headerlink" title="项目一：查找重复的电子邮箱（难度：简单）"></a>项目一：查找重复的电子邮箱（难度：简单）</h2><p>创建 email表，并插入如下三行数据<br>+—-+———+<br>| Id | c   |<br>+—-+———+<br>| 1  | <a href="mailto:a@b.com" target="_blank" rel="noopener">a@b.com</a> |<br>| 2  | <a href="mailto:c@d.com" target="_blank" rel="noopener">c@d.com</a> |<br>| 3  | <a href="mailto:a@b.com" target="_blank" rel="noopener">a@b.com</a> |<br>+—-+———+</p>
-<p>编写一个 SQL 查询，查找 Email 表中所有重复的电子邮箱。<br>根据以上输入，你的查询应返回以下结果：<br>+———+<br>| Email   |<br>+———+<br>| <a href="mailto:a@b.com" target="_blank" rel="noopener">a@b.com</a> |<br>+———+<br>说明：所有电子邮箱都是小写字母。</p>
-<h3 id="解决方法："><a href="#解决方法：" class="headerlink" title="解决方法："></a>解决方法：</h3><ol>
-<li>创建表</li>
-</ol>
-<pre class=" language-sql"><code class="language-sql"><span class="token keyword">CREATE</span> <span class="token keyword">TABLE</span> email <span class="token punctuation">(</span>
-ID <span class="token keyword">INT</span> <span class="token operator">NOT</span> <span class="token boolean">NULL</span> <span class="token keyword">PRIMARY</span> <span class="token keyword">KEY</span><span class="token punctuation">,</span>
-Email <span class="token keyword">VARCHAR</span><span class="token punctuation">(</span><span class="token number">255</span><span class="token punctuation">)</span>
-<span class="token punctuation">)</span><span class="token punctuation">;</span>
+                <h2 id="数据导入导出"><a href="#数据导入导出" class="headerlink" title="数据导入导出"></a>数据导入导出</h2><h3 id="将MySQL表导出到CSV文件"><a href="#将MySQL表导出到CSV文件" class="headerlink" title="将MySQL表导出到CSV文件"></a>将MySQL表导出到CSV文件</h3><pre class=" language-sql"><code class="language-sql"><span class="token keyword">SELECT</span> <span class="token operator">*</span> <span class="token keyword">from</span> world 
+<span class="token keyword">INTO</span> <span class="token keyword">OUTFILE</span> <span class="token string">'E:/mysql-8.0.15-winx64/world.csv'</span>
+<span class="token keyword">FIELDS</span> <span class="token keyword">TERMINATED BY</span> <span class="token string">','</span> <span class="token keyword">ENCLOSED BY</span> <span class="token string">'"'</span>
+<span class="token keyword">LINES</span> <span class="token keyword">TERMINATED BY</span> <span class="token string">'\r\n'</span><span class="token punctuation">;</span>
 </code></pre>
-<ol start="2">
-<li>插入数据</li>
-</ol>
-<pre class=" language-sql"><code class="language-sql"><span class="token keyword">INSERT</span> <span class="token keyword">INTO</span> email <span class="token keyword">VALUES</span><span class="token punctuation">(</span><span class="token string">'1'</span><span class="token punctuation">,</span><span class="token string">'a@b.com'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-<span class="token keyword">INSERT</span> <span class="token keyword">INTO</span> email <span class="token keyword">VALUES</span><span class="token punctuation">(</span><span class="token string">'2'</span><span class="token punctuation">,</span><span class="token string">'c@d.com'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-<span class="token keyword">INSERT</span> <span class="token keyword">INTO</span> email <span class="token keyword">VALUES</span><span class="token punctuation">(</span><span class="token string">'3'</span><span class="token punctuation">,</span><span class="token string">'a@b.com'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<ul>
+<li>该语句在<code>E:/mysql-8.0.15-winx64/</code>目录下创建一个包含结果集，名称为<code>world.csv</code>的CSV文件。</li>
+<li>CSV文件包含结果集中的行集合。每行由一个回车序列和由<code>LINES TERMINATED BY &#39;\r\n&#39;</code>子句指定的换行字符终止。文件中的每行包含表的结果集的每一行记录。</li>
+<li>每个值由<code>FIELDS ENCLOSED BY &#39;&quot;&#39;</code>子句指示的双引号括起来。 这样可以防止可能包含逗号(<code>，</code>)的值被解释为字段分隔符。 当用双引号括住这些值时，该值中的逗号不会被识别为字段分隔符。</li>
+</ul>
+<p>运行时出现了以下<strong>错误</strong>：</p>
+<p><code>ERROR 1290 (HY000): The MySQL server is running with the --secure-file-priv option so it cannot execute this statement</code></p>
+<p>查看官方文档，<code>secure_file_priv</code>参数用于限制LOAD DATA, SELECT …OUTFILE, LOAD_FILE()传到哪个指定目录。</p>
+<ul>
+<li>secure_file_priv 为 NULL 时，表示限制mysqld不允许导入或导出。</li>
+<li>secure_file_priv 为 /tmp 时，表示限制mysqld只能在/tmp目录中执行导入导出，其他目录不能执行。</li>
+<li>secure_file_priv 没有值时，表示不限制mysqld在任意目录的导入导出。</li>
+</ul>
+<p>查看 <strong>secure_file_priv</strong> 的值，默认为NULL，表示限制不能导入导出。</p>
+<pre class=" language-sql"><code class="language-sql">mysql<span class="token operator">></span> <span class="token keyword">show</span> <span class="token keyword">global</span> variables <span class="token operator">like</span> <span class="token string">'%secure_file_priv%'</span><span class="token punctuation">;</span>
+<span class="token operator">+</span><span class="token comment" spellcheck="true">------------------+-------+</span>
+<span class="token operator">|</span> Variable_name    <span class="token operator">|</span> <span class="token keyword">Value</span> <span class="token operator">|</span>
+<span class="token operator">+</span><span class="token comment" spellcheck="true">------------------+-------+</span>
+<span class="token operator">|</span> secure_file_priv <span class="token operator">|</span> <span class="token boolean">NULL</span>  <span class="token operator">|</span>
+<span class="token operator">+</span><span class="token comment" spellcheck="true">------------------+-------+</span>
+<span class="token number">1</span> <span class="token keyword">row</span> <span class="token operator">in</span> <span class="token keyword">set</span> <span class="token punctuation">(</span><span class="token number">0.00</span> sec<span class="token punctuation">)</span>
 </code></pre>
-<ol start="3">
-<li>查询语句</li>
-</ol>
-<pre class=" language-sql"><code class="language-sql"><span class="token keyword">SELECT</span> Email 
-<span class="token keyword">FROM</span> email 
-<span class="token keyword">GROUP</span> <span class="token keyword">BY</span> Email 
-<span class="token keyword">HAVING</span> <span class="token function">COUNT</span><span class="token punctuation">(</span>Email<span class="token punctuation">)</span><span class="token operator">></span><span class="token number">1</span>；
-</code></pre>
-<p>运行结果：</p>
-<p><img src="https://raw.githubusercontent.com/vancenx/mdpic/master/20190404204857.png" alt></p>
-<h2 id="项目二：查找大国（难度：简单）"><a href="#项目二：查找大国（难度：简单）" class="headerlink" title="项目二：查找大国（难度：简单）"></a>项目二：查找大国（难度：简单）</h2><p>创建如下 World 表<br>+—————–+————+————+————–+—————+<br>| name            | continent  | area       | population   | gdp           |<br>+—————–+————+————+————–+—————+<br>| Afghanistan     | Asia       | 652230     | 25500100     | 20343000      |<br>| Albania         | Europe     | 28748      | 2831741      | 12960000      |<br>| Algeria         | Africa     | 2381741    | 37100000     | 188681000     |<br>| Andorra         | Europe     | 468        | 78115        | 3712000       |<br>| Angola          | Africa     | 1246700    | 20609294     | 100990000     |<br>+—————–+————+————+————–+—————+<br>如果一个国家的面积超过300万平方公里，或者(人口超过2500万并且gdp超过2000万)，那么这<br>编写一个SQL查询，输出表中所有大国家的名称、人口和面积。<br>例如，根据上表，我们应该输出:<br>+————–+————-+————–+<br>| name         | population  | area         |<br>+————–+————-+————–+<br>| Afghanistan  | 25500100    | 652230       |<br>| Algeria      | 37100000    | 2381741      |<br>+————–+————-+————–+</p>
-<ol>
-<li>创建表</li>
-</ol>
+<p><strong>解决方法</strong>：</p>
+<ul>
+<li>打开安装目录下的 my.ini，在最后加入以下语句后保存。</li>
+</ul>
+<p><code>secure_file_priv=&#39;&#39;</code></p>
+<ul>
+<li>打开 任务管理器>服务，找到MySQL,右键重新启动。</li>
+</ul>
+<p>修改后再次执行，成功导出CSV。</p>
+<p><img src="https://raw.githubusercontent.com/vancenx/mdpic/master/20190406203949.png" alt></p>
+<h3 id="将CSV文件导出到MySQL表"><a href="#将CSV文件导出到MySQL表" class="headerlink" title="将CSV文件导出到MySQL表"></a>将CSV文件导出到MySQL表</h3><p>在导入文件操作之前，需要准备以下内容：</p>
+<ul>
+<li>将要导入文件的数据对应的数据库表。</li>
+<li>准备好一个CSV文件，其数据与表的列数和每列中的数据类型相匹配。</li>
+<li>连接到MySQL数据库服务器的帐户具有<code>FILE</code>和<code>INSERT</code>权限。</li>
+</ul>
+<p>创建World表：</p>
 <pre class=" language-sql"><code class="language-sql"><span class="token keyword">CREATE</span> <span class="token keyword">TABLE</span> World <span class="token punctuation">(</span>
 name <span class="token keyword">VARCHAR</span><span class="token punctuation">(</span><span class="token number">50</span><span class="token punctuation">)</span> <span class="token operator">NOT</span> <span class="token boolean">NULL</span><span class="token punctuation">,</span>
 continent <span class="token keyword">VARCHAR</span><span class="token punctuation">(</span><span class="token number">50</span><span class="token punctuation">)</span> <span class="token operator">NOT</span> <span class="token boolean">NULL</span><span class="token punctuation">,</span>
@@ -520,30 +482,28 @@ population <span class="token keyword">INT</span> <span class="token operator">N
 gdp <span class="token keyword">INT</span> <span class="token operator">NOT</span> <span class="token boolean">NULL</span>
 <span class="token punctuation">)</span><span class="token punctuation">;</span>
 </code></pre>
-<ol start="2">
-<li>插入数据</li>
-</ol>
-<pre class=" language-sql"><code class="language-sql"><span class="token keyword">INSERT</span> <span class="token keyword">INTO</span> World
-  <span class="token keyword">VALUES</span><span class="token punctuation">(</span><span class="token string">'Afghanistan'</span><span class="token punctuation">,</span><span class="token string">'Asia'</span><span class="token punctuation">,</span><span class="token number">652230</span><span class="token punctuation">,</span><span class="token number">25500100</span><span class="token punctuation">,</span><span class="token number">20343000</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-<span class="token keyword">INSERT</span> <span class="token keyword">INTO</span> World 
-  <span class="token keyword">VALUES</span><span class="token punctuation">(</span><span class="token string">'Albania'</span><span class="token punctuation">,</span><span class="token string">'Europe'</span><span class="token punctuation">,</span><span class="token number">28748</span><span class="token punctuation">,</span><span class="token number">2831741</span><span class="token punctuation">,</span><span class="token number">12960000</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-<span class="token keyword">INSERT</span> <span class="token keyword">INTO</span> World 
-  <span class="token keyword">VALUES</span><span class="token punctuation">(</span><span class="token string">'Algeria'</span><span class="token punctuation">,</span><span class="token string">'Africa'</span><span class="token punctuation">,</span><span class="token number">2381741</span><span class="token punctuation">,</span><span class="token number">37100000</span><span class="token punctuation">,</span><span class="token number">188681000</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-<span class="token keyword">INSERT</span> <span class="token keyword">INTO</span> World
-  <span class="token keyword">VALUES</span><span class="token punctuation">(</span><span class="token string">'Andorra'</span><span class="token punctuation">,</span><span class="token string">'Europe'</span><span class="token punctuation">,</span><span class="token number">468</span><span class="token punctuation">,</span><span class="token number">78115</span><span class="token punctuation">,</span><span class="token number">3712000</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-<span class="token keyword">INSERT</span> <span class="token keyword">INTO</span> World
-  <span class="token keyword">VALUES</span><span class="token punctuation">(</span><span class="token string">'Angola'</span><span class="token punctuation">,</span><span class="token string">'Africa'</span><span class="token punctuation">,</span><span class="token number">1246700</span><span class="token punctuation">,</span><span class="token number">20609294</span><span class="token punctuation">,</span><span class="token number">100990000</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<p>以下是<code>world.csv</code>文件的内容</p>
+<p><img src="https://raw.githubusercontent.com/vancenx/mdpic/master/20190406210105.png" alt></p>
+<p>以下语句将数据从<code>E:/mysql-8.0.15-winx64/world.csv</code>文件导入到World表。</p>
+<pre class=" language-sql"><code class="language-sql"><span class="token keyword">LOAD</span> <span class="token keyword">DATA</span> <span class="token keyword">INFILE</span> <span class="token string">'E:/mysql-8.0.15-winx64/world.csv'</span> 
+<span class="token keyword">INTO</span> <span class="token keyword">TABLE</span> World 
+<span class="token keyword">FIELDS</span> <span class="token keyword">TERMINATED BY</span> <span class="token string">','</span>
+<span class="token keyword">ENCLOSED BY</span> <span class="token string">'"'</span>
+<span class="token keyword">LINES</span> <span class="token keyword">TERMINATED BY</span> <span class="token string">'\n'</span><span class="token punctuation">;</span>
 </code></pre>
-<ol start="3">
-<li>查询语句<pre class=" language-sql"><code class="language-sql"><span class="token keyword">SELECT</span> name<span class="token punctuation">,</span> population<span class="token punctuation">,</span> area
-<span class="token keyword">FROM</span> World
-<span class="token keyword">WHERE</span> area <span class="token operator">></span> <span class="token number">3000000</span>
- <span class="token operator">OR</span> population <span class="token operator">></span> <span class="token number">25000000</span>
+<p>文件的字段由<code>FIELD TERMINATED BY &#39;,&#39;</code>指示的逗号终止，并由<code>ENCLOSED BY &#39;&quot;&#39;</code>指定的双引号括起来。</p>
+<p>运行时出现了以下<strong>错误</strong>：</p>
+<p><code>1265 - Data truncated for column &#39;gdp&#39; at row 1</code></p>
+<p>有时候,这是因为数据类型的不对应,或者字符串长度不够而造成的。但是,经过排查，并不是这个原因。</p>
+<p>后来发现是回车换行<code>\r\n</code>作怪，之前将MySQL表导出到CSV文件使用了<code>LINES TERMINATED BY &#39;\r\n&#39;</code>，所以在导入时也应相同。</p>
+<pre class=" language-sql"><code class="language-sql"><span class="token keyword">LOAD</span> <span class="token keyword">DATA</span> <span class="token keyword">INFILE</span> <span class="token string">'E:/mysql-8.0.15-winx64/world.csv'</span> 
+<span class="token keyword">INTO</span> <span class="token keyword">TABLE</span> World 
+<span class="token keyword">FIELDS</span> <span class="token keyword">TERMINATED BY</span> <span class="token string">','</span>
+<span class="token keyword">ENCLOSED BY</span> <span class="token string">'"'</span>
+<span class="token keyword">LINES</span> <span class="token keyword">TERMINATED BY</span> <span class="token string">'\r\n'</span><span class="token punctuation">;</span>        <span class="token comment" spellcheck="true">--此处更正</span>
 </code></pre>
-</li>
-</ol>
-<p>运行结果：</p>
-<p><img src="https://raw.githubusercontent.com/vancenx/mdpic/master/20190404205034.png" alt></p>
+<p>成功导入：</p>
+<p><img src="https://raw.githubusercontent.com/vancenx/mdpic/master/20190406211938.png" alt></p>
 
             </div>
             <hr>
@@ -691,7 +651,7 @@ gdp <span class="token keyword">INT</span> <span class="token operator">NOT</spa
                     </span>
                     <a href="https://vancenx.github.io" class="b-link-green">Vancen</a>
                     <i class="fa fa-angle-right fa-lg fa-fw text-color"></i>
-                    <a href="/2019/04/02/mysql-ji-chu-cha-xun-yu-ju/" class="b-link-green">MySQL 基础-查询语句</a>
+                    <a href="/2019/04/06/mysql-shu-ju-dao-ru-dao-chu/" class="b-link-green">MySQL 数据导入导出</a>
                 </p>
             </div>
         </div>
@@ -716,23 +676,21 @@ gdp <span class="token keyword">INT</span> <span class="token operator">NOT</spa
             <div class="article-badge left-badge text-color">
                 <i class="fa fa-chevron-left"></i>&nbsp;上一篇</div>
             <div class="card">
-                <a href="/2019/04/04/mysql-ji-chu-biao-cao-zuo/">
+                <a href="/2019/04/06/mysql-shi-zhan/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/16.jpg" class="responsive-img" alt="MySQL 基础- 表操作">
+                        <img src="/medias/featureimages/8.jpg" class="responsive-img" alt="MySQL 实战">
                         
-                        <span class="card-title">MySQL 基础- 表操作</span>
+                        <span class="card-title">MySQL 实战</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
-                    <div class="summary block-with-text">1.MySQL表数据类型MySQL中定义数据字段的类型对你数据库的优化是非常重要的。
-MySQL支持多种类型，大致可以分为三类：数值、日期/时间和字符串(字符)类型。
-
-参考：http://www.runoob.com/mysql/mysq</div>
+                    <div class="summary block-with-text">项目七: 各部门工资最高的员工（难度：中等）创建Employee 表，包含所有员工信息，每个员工有其对应的 Id, salary 和 department Id。
++----+-------+--------+--------------+</div>
                     <div class="publish-info">
                         <span class="publish-date">
-                            <i class="fa fa-clock-o fa-fw icon-date"></i>2019-04-04
+                            <i class="fa fa-clock-o fa-fw icon-date"></i>2019-04-06
                         </span>
                         <span class="publish-author">
                             
@@ -764,25 +722,27 @@ MySQL支持多种类型，大致可以分为三类：数值、日期/时间和�
                 下一篇&nbsp;<i class="fa fa-chevron-right"></i>
             </div>
             <div class="card">
-                <a href="/2019/03/31/mysql-ruan-jian-an-zhuang-ji-shu-ju-ku-ji-chu/">
+                <a href="/2019/04/04/mysql-ji-chu-biao-lian-jie/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/14.jpg" class="responsive-img" alt="MySQL 软件安装及数据库基础">
+                        <img src="/medias/featureimages/8.jpg" class="responsive-img" alt="MySQL 基础- 表联结">
                         
-                        <span class="card-title">MySQL 软件安装及数据库基础</span>
+                        <span class="card-title">MySQL 基础- 表联结</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
-                    <div class="summary block-with-text">MySQL的安装与配置
-参考教程 http://www.runoob.com/mysql/mysql-install.html  
+                    <div class="summary block-with-text">1.MySQL别名
+为表取别名查询数据时，如果表名很长，使用起来不方便，此时，就可以为表取一个别名，用这个别名来代替表的名称 。
 
-注意事项：
+SELECT * FROM 表名 [AS] 别名； 
+--注意，为表指定别名，AS关键字可以省略不写
 
-若使用浏览器下载安装包时速度过慢，可使用多线程下载工具（如 IDM），或者去国内开源镜像站下</div>
+
+为</div>
                     <div class="publish-info">
                             <span class="publish-date">
-                                <i class="fa fa-clock-o fa-fw icon-date"></i>2019-03-31
+                                <i class="fa fa-clock-o fa-fw icon-date"></i>2019-04-04
                             </span>
                         <span class="publish-author">
                             
