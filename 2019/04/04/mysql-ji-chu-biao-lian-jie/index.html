@@ -543,6 +543,7 @@ SELECT * FROM 表名 [AS] 别名；
     LastName <span class="token keyword">VARCHAR</span> <span class="token punctuation">(</span> <span class="token number">20</span> <span class="token punctuation">)</span> <span class="token operator">NOT</span> <span class="token boolean">NULL</span><span class="token punctuation">,</span>
 <span class="token keyword">PRIMARY</span> <span class="token keyword">KEY</span> <span class="token punctuation">(</span> PersonID <span class="token punctuation">)</span> 
 <span class="token punctuation">)</span><span class="token punctuation">;</span>
+
 <span class="token keyword">CREATE</span> <span class="token keyword">TABLE</span> address <span class="token punctuation">(</span>
     AddressId <span class="token keyword">INT</span> <span class="token operator">NOT</span> <span class="token boolean">NULL</span><span class="token punctuation">,</span>
     PersonId <span class="token keyword">INT</span> <span class="token operator">NOT</span> <span class="token boolean">NULL</span><span class="token punctuation">,</span>
@@ -559,6 +560,7 @@ SELECT * FROM 表名 [AS] 别名；
 <span class="token punctuation">(</span><span class="token number">1</span><span class="token punctuation">,</span><span class="token string">'Jean'</span><span class="token punctuation">,</span><span class="token string">'Leo'</span><span class="token punctuation">)</span><span class="token punctuation">,</span>
 <span class="token punctuation">(</span><span class="token number">2</span><span class="token punctuation">,</span><span class="token string">'Tom'</span><span class="token punctuation">,</span><span class="token string">'Hanks'</span><span class="token punctuation">)</span><span class="token punctuation">,</span>
 <span class="token punctuation">(</span><span class="token number">3</span><span class="token punctuation">,</span><span class="token string">'Lily'</span><span class="token punctuation">,</span><span class="token string">'Allen'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
 <span class="token keyword">INSERT</span> <span class="token keyword">INTO</span> address 
 <span class="token keyword">VALUES</span>
 <span class="token punctuation">(</span><span class="token number">01</span><span class="token punctuation">,</span><span class="token number">1</span><span class="token punctuation">,</span><span class="token string">'Juneau'</span><span class="token punctuation">,</span><span class="token string">'Alaska'</span><span class="token punctuation">)</span><span class="token punctuation">,</span>
