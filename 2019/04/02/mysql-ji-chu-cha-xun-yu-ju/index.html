@@ -486,25 +486,25 @@
 <h3 id="解决方法："><a href="#解决方法：" class="headerlink" title="解决方法："></a>解决方法：</h3><ol>
 <li>创建表</li>
 </ol>
-<pre class=" language-mysql"><code class="language-mysql">CREATE TABLE email (
-ID INT NOT NULL PRIMARY KEY,
-Email VARCHAR(255)
-);
+<pre class=" language-sql"><code class="language-sql"><span class="token keyword">CREATE</span> <span class="token keyword">TABLE</span> email <span class="token punctuation">(</span>
+ID <span class="token keyword">INT</span> <span class="token operator">NOT</span> <span class="token boolean">NULL</span> <span class="token keyword">PRIMARY</span> <span class="token keyword">KEY</span><span class="token punctuation">,</span>
+Email <span class="token keyword">VARCHAR</span><span class="token punctuation">(</span><span class="token number">255</span><span class="token punctuation">)</span>
+<span class="token punctuation">)</span><span class="token punctuation">;</span>
 </code></pre>
 <ol start="2">
 <li>插入数据</li>
 </ol>
-<pre class=" language-mysql"><code class="language-mysql">INSERT INTO email VALUES('1','a@b.com');
-INSERT INTO email VALUES('2','c@d.com');
-INSERT INTO email VALUES('3','a@b.com');
+<pre class=" language-sql"><code class="language-sql"><span class="token keyword">INSERT</span> <span class="token keyword">INTO</span> email <span class="token keyword">VALUES</span><span class="token punctuation">(</span><span class="token string">'1'</span><span class="token punctuation">,</span><span class="token string">'a@b.com'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token keyword">INSERT</span> <span class="token keyword">INTO</span> email <span class="token keyword">VALUES</span><span class="token punctuation">(</span><span class="token string">'2'</span><span class="token punctuation">,</span><span class="token string">'c@d.com'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token keyword">INSERT</span> <span class="token keyword">INTO</span> email <span class="token keyword">VALUES</span><span class="token punctuation">(</span><span class="token string">'3'</span><span class="token punctuation">,</span><span class="token string">'a@b.com'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
 </code></pre>
 <ol start="3">
 <li>查询语句</li>
 </ol>
-<pre class=" language-mysql"><code class="language-mysql">SELECT Email 
-FROM email 
-GROUP BY Email 
-HAVING COUNT(Email)>1；
+<pre class=" language-sql"><code class="language-sql"><span class="token keyword">SELECT</span> Email 
+<span class="token keyword">FROM</span> email 
+<span class="token keyword">GROUP</span> <span class="token keyword">BY</span> Email 
+<span class="token keyword">HAVING</span> <span class="token function">COUNT</span><span class="token punctuation">(</span>Email<span class="token punctuation">)</span><span class="token operator">></span><span class="token number">1</span>；
 </code></pre>
 <p>运行结果：</p>
 <p><img src="https://raw.githubusercontent.com/vancenx/mdpic/master/20190404204857.png" alt></p>
@@ -512,33 +512,33 @@ HAVING COUNT(Email)>1；
 <ol>
 <li>创建表</li>
 </ol>
-<pre class=" language-mysql"><code class="language-mysql">CREATE TABLE World (
-name VARCHAR(50) NOT NULL,
-continent VARCHAR(50) NOT NULL,
-area INT NOT NULL,
-population INT NOT NULL,
-gdp INT NOT NULL
-);
+<pre class=" language-sql"><code class="language-sql"><span class="token keyword">CREATE</span> <span class="token keyword">TABLE</span> World <span class="token punctuation">(</span>
+name <span class="token keyword">VARCHAR</span><span class="token punctuation">(</span><span class="token number">50</span><span class="token punctuation">)</span> <span class="token operator">NOT</span> <span class="token boolean">NULL</span><span class="token punctuation">,</span>
+continent <span class="token keyword">VARCHAR</span><span class="token punctuation">(</span><span class="token number">50</span><span class="token punctuation">)</span> <span class="token operator">NOT</span> <span class="token boolean">NULL</span><span class="token punctuation">,</span>
+area <span class="token keyword">INT</span> <span class="token operator">NOT</span> <span class="token boolean">NULL</span><span class="token punctuation">,</span>
+population <span class="token keyword">INT</span> <span class="token operator">NOT</span> <span class="token boolean">NULL</span><span class="token punctuation">,</span>
+gdp <span class="token keyword">INT</span> <span class="token operator">NOT</span> <span class="token boolean">NULL</span>
+<span class="token punctuation">)</span><span class="token punctuation">;</span>
 </code></pre>
 <ol start="2">
 <li>插入数据</li>
 </ol>
-<pre class=" language-mysql"><code class="language-mysql">INSERT INTO World
-  VALUES('Afghanistan','Asia',652230,25500100,20343000);
-INSERT INTO World 
-  VALUES('Albania','Europe',28748,2831741,12960000);
-INSERT INTO World 
-  VALUES('Algeria','Africa',2381741,37100000,188681000);
-INSERT INTO World
-  VALUES('Andorra','Europe',468,78115,3712000);
-INSERT INTO World
-  VALUES('Angola','Africa',1246700,20609294,100990000);
+<pre class=" language-sql"><code class="language-sql"><span class="token keyword">INSERT</span> <span class="token keyword">INTO</span> World
+  <span class="token keyword">VALUES</span><span class="token punctuation">(</span><span class="token string">'Afghanistan'</span><span class="token punctuation">,</span><span class="token string">'Asia'</span><span class="token punctuation">,</span><span class="token number">652230</span><span class="token punctuation">,</span><span class="token number">25500100</span><span class="token punctuation">,</span><span class="token number">20343000</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token keyword">INSERT</span> <span class="token keyword">INTO</span> World 
+  <span class="token keyword">VALUES</span><span class="token punctuation">(</span><span class="token string">'Albania'</span><span class="token punctuation">,</span><span class="token string">'Europe'</span><span class="token punctuation">,</span><span class="token number">28748</span><span class="token punctuation">,</span><span class="token number">2831741</span><span class="token punctuation">,</span><span class="token number">12960000</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token keyword">INSERT</span> <span class="token keyword">INTO</span> World 
+  <span class="token keyword">VALUES</span><span class="token punctuation">(</span><span class="token string">'Algeria'</span><span class="token punctuation">,</span><span class="token string">'Africa'</span><span class="token punctuation">,</span><span class="token number">2381741</span><span class="token punctuation">,</span><span class="token number">37100000</span><span class="token punctuation">,</span><span class="token number">188681000</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token keyword">INSERT</span> <span class="token keyword">INTO</span> World
+  <span class="token keyword">VALUES</span><span class="token punctuation">(</span><span class="token string">'Andorra'</span><span class="token punctuation">,</span><span class="token string">'Europe'</span><span class="token punctuation">,</span><span class="token number">468</span><span class="token punctuation">,</span><span class="token number">78115</span><span class="token punctuation">,</span><span class="token number">3712000</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token keyword">INSERT</span> <span class="token keyword">INTO</span> World
+  <span class="token keyword">VALUES</span><span class="token punctuation">(</span><span class="token string">'Angola'</span><span class="token punctuation">,</span><span class="token string">'Africa'</span><span class="token punctuation">,</span><span class="token number">1246700</span><span class="token punctuation">,</span><span class="token number">20609294</span><span class="token punctuation">,</span><span class="token number">100990000</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
 </code></pre>
 <ol start="3">
-<li>查询语句<pre class=" language-mysql"><code class="language-mysql">SELECT name, population, area
-FROM World
-WHERE area > 3000000
- OR population > 25000000
+<li>查询语句<pre class=" language-sql"><code class="language-sql"><span class="token keyword">SELECT</span> name<span class="token punctuation">,</span> population<span class="token punctuation">,</span> area
+<span class="token keyword">FROM</span> World
+<span class="token keyword">WHERE</span> area <span class="token operator">></span> <span class="token number">3000000</span>
+ <span class="token operator">OR</span> population <span class="token operator">></span> <span class="token number">25000000</span>
 </code></pre>
 </li>
 </ol>

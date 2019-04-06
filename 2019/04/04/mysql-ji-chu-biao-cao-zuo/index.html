@@ -443,7 +443,7 @@ MySQL支持多种类型，大致可以分为三类：数值、日期/时间和�
 <li>定义每个表字段</li>
 </ul>
 <p>以下为创建MySQL数据表的SQL通用语法：</p>
-<pre class=" language-mysql"><code class="language-mysql">CREATE TABLE table_name (column_name column_type);
+<pre class=" language-sql"><code class="language-sql"><span class="token keyword">CREATE</span> <span class="token keyword">TABLE</span> table_name <span class="token punctuation">(</span>column_name column_type<span class="token punctuation">)</span><span class="token punctuation">;</span>
 </code></pre>
 <p>约束条件：</p>
 <ul>
@@ -458,18 +458,18 @@ MySQL支持多种类型，大致可以分为三类：数值、日期/时间和�
 <p>参考：<a href="https://www.jianshu.com/p/4d09d98e87da" target="_blank" rel="noopener">https://www.jianshu.com/p/4d09d98e87da</a></p>
 </blockquote>
 <h2 id="3-用SQL语句向表中添加数据"><a href="#3-用SQL语句向表中添加数据" class="headerlink" title="3.用SQL语句向表中添加数据"></a>3.用SQL语句向表中添加数据</h2><p>以下为向MySQL数据表插入数据通用的 <strong>INSERT INTO</strong> SQL语法：</p>
-<pre class=" language-mysql"><code class="language-mysql">INSERT INTO table_name ( field1, field2,...fieldN )
-                       VALUES
-                       ( value1, value2,...valueN );
+<pre class=" language-sql"><code class="language-sql"><span class="token keyword">INSERT</span> <span class="token keyword">INTO</span> table_name <span class="token punctuation">(</span> field1<span class="token punctuation">,</span> field2<span class="token punctuation">,</span><span class="token punctuation">.</span><span class="token punctuation">.</span><span class="token punctuation">.</span>fieldN <span class="token punctuation">)</span>
+                       <span class="token keyword">VALUES</span>
+                       <span class="token punctuation">(</span> value1<span class="token punctuation">,</span> value2<span class="token punctuation">,</span><span class="token punctuation">.</span><span class="token punctuation">.</span><span class="token punctuation">.</span>valueN <span class="token punctuation">)</span><span class="token punctuation">;</span>
 </code></pre>
 <p>如果数据是字符型，必须使用单引号或者双引号，如：”value”。</p>
 <p>如果所有的列都要添加数据可以不规定列进行添加数据：</p>
-<pre class=" language-mysql"><code class="language-mysql">INSERT INTO table_name
-                       VALUES
-                       ( value1, value2,...valueN );
+<pre class=" language-sql"><code class="language-sql"><span class="token keyword">INSERT</span> <span class="token keyword">INTO</span> table_name
+                       <span class="token keyword">VALUES</span>
+                       <span class="token punctuation">(</span> value1<span class="token punctuation">,</span> value2<span class="token punctuation">,</span><span class="token punctuation">.</span><span class="token punctuation">.</span><span class="token punctuation">.</span>valueN <span class="token punctuation">)</span><span class="token punctuation">;</span>
 </code></pre>
 <h2 id="4-用SQL语句删除数据"><a href="#4-用SQL语句删除数据" class="headerlink" title="4.用SQL语句删除数据"></a>4.用SQL语句删除数据</h2><h3 id="DELETE"><a href="#DELETE" class="headerlink" title="DELETE"></a>DELETE</h3><p>删除记录</p>
-<pre class=" language-mysql"><code class="language-mysql">DELETE FROM table_name [WHERE Clause]
+<pre class=" language-sql"><code class="language-sql"><span class="token keyword">DELETE</span> <span class="token keyword">FROM</span> table_name <span class="token punctuation">[</span><span class="token keyword">WHERE</span> Clause<span class="token punctuation">]</span>
 </code></pre>
 <ul>
 <li>如果没有指定 WHERE 子句，MySQL 表中的所有记录将被删除。</li>
@@ -477,10 +477,10 @@ MySQL支持多种类型，大致可以分为三类：数值、日期/时间和�
 <li>您可以在单个表中一次性删除记录。</li>
 </ul>
 <h3 id="DROP"><a href="#DROP" class="headerlink" title="DROP"></a>DROP</h3><p>删除表</p>
-<pre class=" language-mysql"><code class="language-mysql">DROP TABLE table_name ;
+<pre class=" language-sql"><code class="language-sql"><span class="token keyword">DROP</span> <span class="token keyword">TABLE</span> table_name <span class="token punctuation">;</span>
 </code></pre>
 <h3 id="TRUNCATE"><a href="#TRUNCATE" class="headerlink" title="TRUNCATE"></a>TRUNCATE</h3><p>删除表数据</p>
-<pre class=" language-mysql"><code class="language-mysql">TRUNCATE TABLE table_name ;
+<pre class=" language-sql"><code class="language-sql"><span class="token keyword">TRUNCATE</span> <span class="token keyword">TABLE</span> table_name <span class="token punctuation">;</span>
 </code></pre>
 <h3 id="区别"><a href="#区别" class="headerlink" title="区别"></a>区别</h3><ul>
 <li>delete 和 truncate 仅仅删除表数据，drop 连表数据和表结构一起删除，打个比方，delete 是单杀，truncate 是团灭，drop 是把电脑摔了。</li>
@@ -488,8 +488,8 @@ MySQL支持多种类型，大致可以分为三类：数值、日期/时间和�
 <li>执行的速度上，<strong>drop&gt;truncate&gt;delete</strong>，打个比方，drop 是神舟火箭，truncate 是和谐号动车，delete 是自行车。</li>
 </ul>
 <h2 id="5-用SQL语句修改表"><a href="#5-用SQL语句修改表" class="headerlink" title="5.用SQL语句修改表"></a>5.用SQL语句修改表</h2><h3 id="UPDATE"><a href="#UPDATE" class="headerlink" title="UPDATE"></a>UPDATE</h3><p>修改或更新 MySQL 中的数据</p>
-<pre class=" language-mysql"><code class="language-mysql">UPDATE table_name SET field1=new-value1, field2=new-value2
-[WHERE Clause]
+<pre class=" language-sql"><code class="language-sql"><span class="token keyword">UPDATE</span> table_name <span class="token keyword">SET</span> field1<span class="token operator">=</span>new<span class="token operator">-</span>value1<span class="token punctuation">,</span> field2<span class="token operator">=</span>new<span class="token operator">-</span>value2
+<span class="token punctuation">[</span><span class="token keyword">WHERE</span> Clause<span class="token punctuation">]</span>
 </code></pre>
 <ul>
 <li>你可以同时更新一个或多个字段。</li>
@@ -498,13 +498,13 @@ MySQL支持多种类型，大致可以分为三类：数值、日期/时间和�
 </ul>
 <h3 id="ALTER"><a href="#ALTER" class="headerlink" title="ALTER"></a>ALTER</h3><ul>
 <li><p>删除列</p>
-<pre class=" language-mysql"><code class="language-mysql">ALTER table_name DROP 【列名称】
+<pre class=" language-sql"><code class="language-sql"><span class="token keyword">ALTER</span> table_name <span class="token keyword">DROP</span> 【列名称】
 </code></pre>
 </li>
-<li>增加列<pre class=" language-mysql"><code class="language-mysql">ALTER table_name ADD 【列名称】 INT NOT NULL  COMMENT '注释说明'
+<li>增加列<pre class=" language-sql"><code class="language-sql"><span class="token keyword">ALTER</span> table_name <span class="token keyword">ADD</span> 【列名称】 <span class="token keyword">INT</span> <span class="token operator">NOT</span> <span class="token boolean">NULL</span>  <span class="token keyword">COMMENT</span> <span class="token string">'注释说明'</span>
 </code></pre>
 </li>
-<li>重命名列<pre class=" language-mysql"><code class="language-mysql">ALTER table_name CHANGE 【列名称】【新列名称】 BIGINT NOT NULL  COMMENT '注释说明'
+<li>重命名列<pre class=" language-sql"><code class="language-sql"><span class="token keyword">ALTER</span> table_name CHANGE 【列名称】【新列名称】 <span class="token keyword">BIGINT</span> <span class="token operator">NOT</span> <span class="token boolean">NULL</span>  <span class="token keyword">COMMENT</span> <span class="token string">'注释说明'</span>
 </code></pre>
 </li>
 </ul>
@@ -534,29 +534,29 @@ MySQL支持多种类型，大致可以分为三类：数值、日期/时间和�
 <p>Note:</p>
 <p>学生在每个课中不应被重复计算。</p>
 <ol>
-<li>创建表<pre class=" language-mysql"><code class="language-mysql">CREATE TABLE courses(
- student char(1) NOT NULL, 
- class varchar(20) NOT NULL
-);
+<li>创建表<pre class=" language-sql"><code class="language-sql"><span class="token keyword">CREATE</span> <span class="token keyword">TABLE</span> courses<span class="token punctuation">(</span>
+ student char<span class="token punctuation">(</span><span class="token number">1</span><span class="token punctuation">)</span> <span class="token operator">NOT</span> <span class="token boolean">NULL</span><span class="token punctuation">,</span> 
+ class <span class="token keyword">varchar</span><span class="token punctuation">(</span><span class="token number">20</span><span class="token punctuation">)</span> <span class="token operator">NOT</span> <span class="token boolean">NULL</span>
+<span class="token punctuation">)</span><span class="token punctuation">;</span>
 </code></pre>
 </li>
-<li>插入数据<pre class=" language-mysql"><code class="language-mysql">INSERT INTO courses
-VALUES
- ( 'A', 'Math' ),
- ( 'B', 'English' ),
- ( 'C', 'Math' ),
- ( 'D', 'Biology' ),
- ( 'E', 'Math' ),
- ( 'F', 'Computer' ),
- ( 'G', 'Math' ),
- ( 'H', 'Math' ),
- ( 'I', 'Math' ),
- ( 'A', 'Math' );
+<li>插入数据<pre class=" language-sql"><code class="language-sql"><span class="token keyword">INSERT</span> <span class="token keyword">INTO</span> courses
+<span class="token keyword">VALUES</span>
+ <span class="token punctuation">(</span> <span class="token string">'A'</span><span class="token punctuation">,</span> <span class="token string">'Math'</span> <span class="token punctuation">)</span><span class="token punctuation">,</span>
+ <span class="token punctuation">(</span> <span class="token string">'B'</span><span class="token punctuation">,</span> <span class="token string">'English'</span> <span class="token punctuation">)</span><span class="token punctuation">,</span>
+ <span class="token punctuation">(</span> <span class="token string">'C'</span><span class="token punctuation">,</span> <span class="token string">'Math'</span> <span class="token punctuation">)</span><span class="token punctuation">,</span>
+ <span class="token punctuation">(</span> <span class="token string">'D'</span><span class="token punctuation">,</span> <span class="token string">'Biology'</span> <span class="token punctuation">)</span><span class="token punctuation">,</span>
+ <span class="token punctuation">(</span> <span class="token string">'E'</span><span class="token punctuation">,</span> <span class="token string">'Math'</span> <span class="token punctuation">)</span><span class="token punctuation">,</span>
+ <span class="token punctuation">(</span> <span class="token string">'F'</span><span class="token punctuation">,</span> <span class="token string">'Computer'</span> <span class="token punctuation">)</span><span class="token punctuation">,</span>
+ <span class="token punctuation">(</span> <span class="token string">'G'</span><span class="token punctuation">,</span> <span class="token string">'Math'</span> <span class="token punctuation">)</span><span class="token punctuation">,</span>
+ <span class="token punctuation">(</span> <span class="token string">'H'</span><span class="token punctuation">,</span> <span class="token string">'Math'</span> <span class="token punctuation">)</span><span class="token punctuation">,</span>
+ <span class="token punctuation">(</span> <span class="token string">'I'</span><span class="token punctuation">,</span> <span class="token string">'Math'</span> <span class="token punctuation">)</span><span class="token punctuation">,</span>
+ <span class="token punctuation">(</span> <span class="token string">'A'</span><span class="token punctuation">,</span> <span class="token string">'Math'</span> <span class="token punctuation">)</span><span class="token punctuation">;</span>
 </code></pre>
 </li>
-<li>查询语句<pre class=" language-mysql"><code class="language-mysql">SELECT class
-FROM courses
-GROUP BY class HAVING count(DISTINCT student) >= 5;
+<li>查询语句<pre class=" language-sql"><code class="language-sql"><span class="token keyword">SELECT</span> class
+<span class="token keyword">FROM</span> courses
+<span class="token keyword">GROUP</span> <span class="token keyword">BY</span> class <span class="token keyword">HAVING</span> <span class="token function">count</span><span class="token punctuation">(</span><span class="token keyword">DISTINCT</span> student<span class="token punctuation">)</span> <span class="token operator">>=</span> <span class="token number">5</span><span class="token punctuation">;</span>
 </code></pre>
 运行结果：</li>
 </ol>
@@ -579,28 +579,28 @@ GROUP BY class HAVING count(DISTINCT student) >= 5;
 <p>| 3  | C    | f   | 5500   |</p>
 <p>| 4  | D    | m   | 500    |</p>
 <ol>
-<li>创建表<pre class=" language-mysql"><code class="language-mysql">CREATE TABLE salary( 
- id int NOT NULL auto_increment, 
- name char(1) NOT NULL, 
- sex char(1) NOT NULL, 
- salary int NOT NULL, 
- PRIMARY key(id)
-);
+<li>创建表<pre class=" language-sql"><code class="language-sql"><span class="token keyword">CREATE</span> <span class="token keyword">TABLE</span> salary<span class="token punctuation">(</span> 
+ id <span class="token keyword">int</span> <span class="token operator">NOT</span> <span class="token boolean">NULL</span> <span class="token keyword">auto_increment</span><span class="token punctuation">,</span> 
+ name char<span class="token punctuation">(</span><span class="token number">1</span><span class="token punctuation">)</span> <span class="token operator">NOT</span> <span class="token boolean">NULL</span><span class="token punctuation">,</span> 
+ sex char<span class="token punctuation">(</span><span class="token number">1</span><span class="token punctuation">)</span> <span class="token operator">NOT</span> <span class="token boolean">NULL</span><span class="token punctuation">,</span> 
+ salary <span class="token keyword">int</span> <span class="token operator">NOT</span> <span class="token boolean">NULL</span><span class="token punctuation">,</span> 
+ <span class="token keyword">PRIMARY</span> <span class="token keyword">key</span><span class="token punctuation">(</span>id<span class="token punctuation">)</span>
+<span class="token punctuation">)</span><span class="token punctuation">;</span>
 </code></pre>
 </li>
-<li>插入数据<pre class=" language-mysql"><code class="language-mysql">INSERT INTO salary ( NAME, sex, salary )
-VALUES
- ( 'A', 'm', 2500 ),
- ( 'B', 'f', 1500 ),
- ( 'C', 'm', 5500 ),
- ( 'D', 'f', 500 );
+<li>插入数据<pre class=" language-sql"><code class="language-sql"><span class="token keyword">INSERT</span> <span class="token keyword">INTO</span> salary <span class="token punctuation">(</span> NAME<span class="token punctuation">,</span> sex<span class="token punctuation">,</span> salary <span class="token punctuation">)</span>
+<span class="token keyword">VALUES</span>
+ <span class="token punctuation">(</span> <span class="token string">'A'</span><span class="token punctuation">,</span> <span class="token string">'m'</span><span class="token punctuation">,</span> <span class="token number">2500</span> <span class="token punctuation">)</span><span class="token punctuation">,</span>
+ <span class="token punctuation">(</span> <span class="token string">'B'</span><span class="token punctuation">,</span> <span class="token string">'f'</span><span class="token punctuation">,</span> <span class="token number">1500</span> <span class="token punctuation">)</span><span class="token punctuation">,</span>
+ <span class="token punctuation">(</span> <span class="token string">'C'</span><span class="token punctuation">,</span> <span class="token string">'m'</span><span class="token punctuation">,</span> <span class="token number">5500</span> <span class="token punctuation">)</span><span class="token punctuation">,</span>
+ <span class="token punctuation">(</span> <span class="token string">'D'</span><span class="token punctuation">,</span> <span class="token string">'f'</span><span class="token punctuation">,</span> <span class="token number">500</span> <span class="token punctuation">)</span><span class="token punctuation">;</span>
 </code></pre>
 </li>
-<li>查询语句<pre class=" language-mysql"><code class="language-mysql">UPDATE salary
-SET sex = CASE 
- WHEN sex = 'f' THEN 'm'
- ELSE 'f'
-END;
+<li>查询语句<pre class=" language-sql"><code class="language-sql"><span class="token keyword">UPDATE</span> salary
+<span class="token keyword">SET</span> sex <span class="token operator">=</span> <span class="token keyword">CASE</span> 
+ <span class="token keyword">WHEN</span> sex <span class="token operator">=</span> <span class="token string">'f'</span> <span class="token keyword">THEN</span> <span class="token string">'m'</span>
+ <span class="token keyword">ELSE</span> <span class="token string">'f'</span>
+<span class="token keyword">END</span><span class="token punctuation">;</span>
 </code></pre>
 运行结果：<br><img src="https://raw.githubusercontent.com/vancenx/mdpic/master/20190404234629.png" alt></li>
 </ol>
