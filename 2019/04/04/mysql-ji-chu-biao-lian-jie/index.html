@@ -535,23 +535,37 @@ SELECT * FROM 表名 [AS] 别名；
 <p>AddressId 是上表主键</p>
 <p>编写一个 SQL 查询，满足条件：无论 person 是否有地址信息，都需要基于上述两表提供 person 的以下信息：FirstName, LastName, City, State</p>
 <ol>
-<li>创建表<br><code>`</code>sql<br>CREATE TABLE person (<br> PersonId INT NOT NULL,<br> FirstName VARCHAR ( 20 ) NOT NULL,<br> LastName VARCHAR ( 20 ) NOT NULL,<br>PRIMARY KEY ( PersonID )<br>);</li>
+<li>创建表</li>
 </ol>
-<p>CREATE TABLE address (<br>    AddressId INT NOT NULL,<br>    PersonId INT NOT NULL,<br>    City VARCHAR ( 20 ) NOT NULL,<br>    State VARCHAR ( 20 ) NOT NULL,<br>PRIMARY KEY ( AddressId )<br>);</p>
-<pre><code>2. 插入数据
-```sql
-INSERT INTO person 
-VALUES
-(1,&#39;Jean&#39;,&#39;Leo&#39;),
-(2,&#39;Tom&#39;,&#39;Hanks&#39;),
-(3,&#39;Lily&#39;,&#39;Allen&#39;);
-
-INSERT INTO address 
-VALUES
-(01,1,&#39;Juneau&#39;,&#39;Alaska&#39;),
-(02,2,&#39;Phoenix&#39;,&#39;Arizona&#39;),
-(03,4,&#39;Atlanta&#39;,&#39;Georgia&#39;);
-</code></pre><ol start="3">
+<pre class=" language-sql"><code class="language-sql"><span class="token keyword">CREATE</span> <span class="token keyword">TABLE</span> person <span class="token punctuation">(</span>
+    PersonId <span class="token keyword">INT</span> <span class="token operator">NOT</span> <span class="token boolean">NULL</span><span class="token punctuation">,</span>
+    FirstName <span class="token keyword">VARCHAR</span> <span class="token punctuation">(</span> <span class="token number">20</span> <span class="token punctuation">)</span> <span class="token operator">NOT</span> <span class="token boolean">NULL</span><span class="token punctuation">,</span>
+    LastName <span class="token keyword">VARCHAR</span> <span class="token punctuation">(</span> <span class="token number">20</span> <span class="token punctuation">)</span> <span class="token operator">NOT</span> <span class="token boolean">NULL</span><span class="token punctuation">,</span>
+<span class="token keyword">PRIMARY</span> <span class="token keyword">KEY</span> <span class="token punctuation">(</span> PersonID <span class="token punctuation">)</span> 
+<span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token keyword">CREATE</span> <span class="token keyword">TABLE</span> address <span class="token punctuation">(</span>
+    AddressId <span class="token keyword">INT</span> <span class="token operator">NOT</span> <span class="token boolean">NULL</span><span class="token punctuation">,</span>
+    PersonId <span class="token keyword">INT</span> <span class="token operator">NOT</span> <span class="token boolean">NULL</span><span class="token punctuation">,</span>
+    City <span class="token keyword">VARCHAR</span> <span class="token punctuation">(</span> <span class="token number">20</span> <span class="token punctuation">)</span> <span class="token operator">NOT</span> <span class="token boolean">NULL</span><span class="token punctuation">,</span>
+    State <span class="token keyword">VARCHAR</span> <span class="token punctuation">(</span> <span class="token number">20</span> <span class="token punctuation">)</span> <span class="token operator">NOT</span> <span class="token boolean">NULL</span><span class="token punctuation">,</span>
+<span class="token keyword">PRIMARY</span> <span class="token keyword">KEY</span> <span class="token punctuation">(</span> AddressId <span class="token punctuation">)</span> 
+<span class="token punctuation">)</span><span class="token punctuation">;</span>
+</code></pre>
+<ol start="2">
+<li>插入数据</li>
+</ol>
+<pre class=" language-sql"><code class="language-sql"><span class="token keyword">INSERT</span> <span class="token keyword">INTO</span> person 
+<span class="token keyword">VALUES</span>
+<span class="token punctuation">(</span><span class="token number">1</span><span class="token punctuation">,</span><span class="token string">'Jean'</span><span class="token punctuation">,</span><span class="token string">'Leo'</span><span class="token punctuation">)</span><span class="token punctuation">,</span>
+<span class="token punctuation">(</span><span class="token number">2</span><span class="token punctuation">,</span><span class="token string">'Tom'</span><span class="token punctuation">,</span><span class="token string">'Hanks'</span><span class="token punctuation">)</span><span class="token punctuation">,</span>
+<span class="token punctuation">(</span><span class="token number">3</span><span class="token punctuation">,</span><span class="token string">'Lily'</span><span class="token punctuation">,</span><span class="token string">'Allen'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token keyword">INSERT</span> <span class="token keyword">INTO</span> address 
+<span class="token keyword">VALUES</span>
+<span class="token punctuation">(</span><span class="token number">01</span><span class="token punctuation">,</span><span class="token number">1</span><span class="token punctuation">,</span><span class="token string">'Juneau'</span><span class="token punctuation">,</span><span class="token string">'Alaska'</span><span class="token punctuation">)</span><span class="token punctuation">,</span>
+<span class="token punctuation">(</span><span class="token number">02</span><span class="token punctuation">,</span><span class="token number">2</span><span class="token punctuation">,</span><span class="token string">'Phoenix'</span><span class="token punctuation">,</span><span class="token string">'Arizona'</span><span class="token punctuation">)</span><span class="token punctuation">,</span>
+<span class="token punctuation">(</span><span class="token number">03</span><span class="token punctuation">,</span><span class="token number">4</span><span class="token punctuation">,</span><span class="token string">'Atlanta'</span><span class="token punctuation">,</span><span class="token string">'Georgia'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+</code></pre>
+<ol start="3">
 <li>查询语句<pre class=" language-sql"><code class="language-sql"><span class="token keyword">SELECT</span>
  person<span class="token punctuation">.</span>FirstName<span class="token punctuation">,</span>
  person<span class="token punctuation">.</span>LastName<span class="token punctuation">,</span>
