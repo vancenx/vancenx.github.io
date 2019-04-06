@@ -408,7 +408,7 @@ MySQL支持多种类型，大致可以分为三类：数值、日期/时间和�
                     
                     <div class="info-break-policy">
                         <i class="fa fa-file-word-o fa-fw"></i>文章字数:&nbsp;&nbsp;
-                        994
+                        1.1k
                     </div>
                     
 
@@ -506,8 +506,17 @@ MySQL支持多种类型，大致可以分为三类：数值、日期/时间和�
 </li>
 <li>重命名列<pre class=" language-sql"><code class="language-sql"><span class="token keyword">ALTER</span> table_name CHANGE 【列名称】【新列名称】 <span class="token keyword">BIGINT</span> <span class="token operator">NOT</span> <span class="token boolean">NULL</span>  <span class="token keyword">COMMENT</span> <span class="token string">'注释说明'</span>
 </code></pre>
-</li>
+<h2 id="6-MySQL常用技巧"><a href="#6-MySQL常用技巧" class="headerlink" title="6.MySQL常用技巧"></a>6.MySQL常用技巧</h2></li>
+<li>MySQL行计数：如何在MySQL中获取表中的行数？</li>
+<li>MySQL比较两个表</li>
+<li>如何在MySQL中找到重复的值</li>
+<li>如何删除MySQL中的重复行</li>
+<li>MySQL变量</li>
+<li>……</li>
 </ul>
+<blockquote>
+<p>参考：<a href="https://www.yiibai.com/mysql/mysqltips.html" target="_blank" rel="noopener">https://www.yiibai.com/mysql/mysqltips.html</a></p>
+</blockquote>
 <h2 id="项目三：超过5名学生的课（难度：简单）"><a href="#项目三：超过5名学生的课（难度：简单）" class="headerlink" title="项目三：超过5名学生的课（难度：简单）"></a>项目三：超过5名学生的课（难度：简单）</h2><p>创建如下所示的courses 表 ，有: student (学生) 和 class (课程)。</p>
 <p>例如,表:</p>
 <p>+———+————+</p>
@@ -588,7 +597,7 @@ MySQL支持多种类型，大致可以分为三类：数值、日期/时间和�
 <span class="token punctuation">)</span><span class="token punctuation">;</span>
 </code></pre>
 </li>
-<li>插入数据<pre class=" language-sql"><code class="language-sql"><span class="token keyword">INSERT</span> <span class="token keyword">INTO</span> salary <span class="token punctuation">(</span> NAME<span class="token punctuation">,</span> sex<span class="token punctuation">,</span> salary <span class="token punctuation">)</span>
+<li>插入数据<pre class=" language-sql"><code class="language-sql"><span class="token keyword">INSERT</span> <span class="token keyword">INTO</span> salary <span class="token punctuation">(</span> name<span class="token punctuation">,</span> sex<span class="token punctuation">,</span> salary <span class="token punctuation">)</span>
 <span class="token keyword">VALUES</span>
  <span class="token punctuation">(</span> <span class="token string">'A'</span><span class="token punctuation">,</span> <span class="token string">'m'</span><span class="token punctuation">,</span> <span class="token number">2500</span> <span class="token punctuation">)</span><span class="token punctuation">,</span>
  <span class="token punctuation">(</span> <span class="token string">'B'</span><span class="token punctuation">,</span> <span class="token string">'f'</span><span class="token punctuation">,</span> <span class="token number">1500</span> <span class="token punctuation">)</span><span class="token punctuation">,</span>
@@ -604,6 +613,9 @@ MySQL支持多种类型，大致可以分为三类：数值、日期/时间和�
 </code></pre>
 运行结果：<br><img src="https://raw.githubusercontent.com/vancenx/mdpic/master/20190404234629.png" alt></li>
 </ol>
+<blockquote>
+<p>CASE语句：<a href="https://www.yiibai.com/mysql/case-statement.html" target="_blank" rel="noopener">https://www.yiibai.com/mysql/case-statement.html</a></p>
+</blockquote>
 
             </div>
             <hr>
@@ -786,7 +798,14 @@ MySQL支持多种类型，大致可以分为三类：数值、日期/时间和�
                     </div>
                 </a>
                 <div class="card-content article-content">
-                    <div class="summary block-with-text"></div>
+                    <div class="summary block-with-text">1.MySQL别名
+为表取别名查询数据时，如果表名很长，使用起来不方便，此时，就可以为表取一个别名，用这个别名来代替表的名称 。
+
+SELECT * FROM 表名 [AS] 别名； 
+--注意，为表指定别名，AS关键字可以省略不写
+
+
+为</div>
                     <div class="publish-info">
                         <span class="publish-date">
                             <i class="fa fa-clock-o fa-fw icon-date"></i>2019-04-04
@@ -974,7 +993,7 @@ MySQL支持多种类型，大致可以分为三类：数值、日期/时间和�
 
             
                 &nbsp;<i class="fa fa-area-chart"></i>&nbsp;站点总字数:&nbsp;
-                <span class="white-color">2.6k</span>
+                <span class="white-color">4k</span>
             
 
             
