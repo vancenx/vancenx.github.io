@@ -530,13 +530,43 @@
 <ol>
 <li>创建表</li>
 </ol>
+<pre class=" language-sql"><code class="language-sql"><span class="token keyword">CREATE</span> <span class="token keyword">TABLE</span> seat <span class="token punctuation">(</span> 
+id <span class="token keyword">INT</span> <span class="token punctuation">(</span> <span class="token number">20</span> <span class="token punctuation">)</span> <span class="token keyword">PRIMARY</span> <span class="token keyword">KEY</span><span class="token punctuation">,</span> 
+student <span class="token keyword">VARCHAR</span> <span class="token punctuation">(</span> <span class="token number">20</span> <span class="token punctuation">)</span> 
+<span class="token punctuation">)</span><span class="token punctuation">;</span>
+</code></pre>
 <ol start="2">
 <li>插入数据</li>
 </ol>
+<pre class=" language-sql"><code class="language-sql"><span class="token keyword">INSERT</span> <span class="token keyword">INTO</span> seat
+<span class="token keyword">VALUES</span>
+    <span class="token punctuation">(</span> <span class="token number">1</span><span class="token punctuation">,</span> <span class="token string">"Abbot"</span> <span class="token punctuation">)</span><span class="token punctuation">,</span>
+    <span class="token punctuation">(</span> <span class="token number">2</span><span class="token punctuation">,</span> <span class="token string">"Doris"</span> <span class="token punctuation">)</span><span class="token punctuation">,</span>
+    <span class="token punctuation">(</span> <span class="token number">3</span><span class="token punctuation">,</span> <span class="token string">"Emerson"</span> <span class="token punctuation">)</span><span class="token punctuation">,</span>
+    <span class="token punctuation">(</span> <span class="token number">4</span><span class="token punctuation">,</span> <span class="token string">"Green"</span> <span class="token punctuation">)</span><span class="token punctuation">,</span>
+    <span class="token punctuation">(</span> <span class="token number">5</span><span class="token punctuation">,</span> <span class="token string">"Jeames"</span> <span class="token punctuation">)</span><span class="token punctuation">;</span>
+</code></pre>
 <ol start="3">
 <li>查询语句</li>
 </ol>
+<pre class=" language-sql"><code class="language-sql"><span class="token keyword">SELECT</span> <span class="token keyword">CASE</span> 
+        <span class="token keyword">WHEN</span> id <span class="token operator">%</span> <span class="token number">2</span> <span class="token operator">&lt;></span> <span class="token number">0</span>
+        <span class="token operator">AND</span> id <span class="token operator">&lt;></span> <span class="token punctuation">(</span>
+            <span class="token keyword">SELECT</span> <span class="token function">COUNT</span><span class="token punctuation">(</span><span class="token operator">*</span><span class="token punctuation">)</span>
+            <span class="token keyword">FROM</span> seat
+        <span class="token punctuation">)</span> <span class="token keyword">THEN</span> id <span class="token operator">+</span> <span class="token number">1</span>
+        <span class="token keyword">WHEN</span> id <span class="token operator">%</span> <span class="token number">2</span> <span class="token operator">&lt;></span> <span class="token number">0</span>
+        <span class="token operator">AND</span> id <span class="token operator">=</span> <span class="token punctuation">(</span>
+            <span class="token keyword">SELECT</span> <span class="token function">COUNT</span><span class="token punctuation">(</span><span class="token operator">*</span><span class="token punctuation">)</span>
+            <span class="token keyword">FROM</span> seat
+        <span class="token punctuation">)</span> <span class="token keyword">THEN</span> id
+        <span class="token keyword">ELSE</span> id <span class="token operator">-</span> <span class="token number">1</span>
+    <span class="token keyword">END</span> <span class="token keyword">AS</span> id<span class="token punctuation">,</span> student
+<span class="token keyword">FROM</span> seat
+<span class="token keyword">ORDER</span> <span class="token keyword">BY</span> id <span class="token keyword">ASC</span><span class="token punctuation">;</span>
+</code></pre>
 <p>运行结果：</p>
+<p><img src="https://raw.githubusercontent.com/vancenx/mdpic/master/20190407162817.png" alt></p>
 <h2 id="项目九-分数排名（难度：中等）"><a href="#项目九-分数排名（难度：中等）" class="headerlink" title="项目九:  分数排名（难度：中等）"></a>项目九:  分数排名（难度：中等）</h2><p>编写一个 SQL 查询来实现分数排名。如果两个分数相同，则两个分数排名（Rank）相同。请注意，平分后的下一个名次应该是下一个连续的整数值。换句话说，名次之间不应该有“间隔”。</p>
 <p>创建以下score表：</p>
 <pre><code>+----+-------+
@@ -1041,7 +1071,7 @@ FIELDS TERMINATED BY ',' ENCLO</div>
 
             
                 &nbsp;<i class="fa fa-area-chart"></i>&nbsp;站点总字数:&nbsp;
-                <span class="white-color">5.9k</span>
+                <span class="white-color">6k</span>
             
 
             
